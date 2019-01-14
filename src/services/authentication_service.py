@@ -4,7 +4,7 @@ from google_auth_oauthlib import flow
 from oauth2client import file, tools
 
 from flask import url_for, session, redirect
-from ..insight import application
+from . import application
 import os
 
 # If modifying these scopes, delete the file token.json.

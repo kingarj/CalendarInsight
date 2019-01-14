@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..insight import application
+from src.insight import application
 
 
 def format_date(iso):

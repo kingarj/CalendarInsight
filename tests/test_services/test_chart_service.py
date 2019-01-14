@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 from ..test_client import TestBase
-from ...services.chart_service import draw_chart, build_file_name, get_chart_data
+from src.services.chart_service import draw_chart, build_file_name, get_chart_data
 
 
 class TestChartService(TestBase):
@@ -20,7 +20,7 @@ class TestChartService(TestBase):
         Tests that a file name can be successfully built
         """
         now = datetime.now().strftime('%Y-%m-%d-%H')
-        correct_file_name = "static/plots/testEtag2018-11-192018-11-21" + now + ".png"
+        correct_file_name = "src/static/plots/testEtag2018-11-192018-11-21" + now + ".png"
         test_file_name = build_file_name(self.first_date, self.second_date)
         assert correct_file_name == test_file_name
 

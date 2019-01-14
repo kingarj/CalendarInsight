@@ -77,4 +77,4 @@ def build_file_name(first_date, second_date):
     second = second_date.strftime('%Y-%m-%d')
     now = datetime.now().strftime('%Y-%m-%d-%H')
 
-    return "static/plots/" + primary_etag + first + second + now + ".png"
+    return "src/static/plots/" + primary_etag + first + second + now + ".png"
