@@ -1,5 +1,6 @@
+import inspect
 from datetime import datetime, timedelta
-import pytest
+import os, pytest
 
 from ..insight import application
 from googleapiclient.http import HttpMock
@@ -11,8 +12,8 @@ class TestBase:
     credentials_mock = None
     request_builder_mock = None
     authentication_mock = None
-    response_mock = HttpMock('K:\\source_code\\calendar_insight\\app\\tests\\resources'
-                             '\\calendar_list_resp.json', headers={'status': '200'})
+    response_mock = HttpMock(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))) +
+                             '\\resources\\calendar_list_resp.json', headers={'status': '200'})
 
     first_date = datetime(2018, 11, 19).astimezone()
     second_date = (datetime(2018, 11, 20).astimezone() + timedelta(1))
