@@ -11,8 +11,8 @@ Download the `credentials.json` file to the root of the project.
 
 ### Prerequisites
 
-Python 3
-An IDE that supports development of a Flask application e.g. PyCharm
+* Python 3
+* An IDE that supports development of a Flask application e.g. PyCharm
 
 ### Environment variables
 
