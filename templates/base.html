@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Insight</title>
+
+    <link rel="icon" href="../static/images/favicon-calendar.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <script src="{{ url_for('static', filename='datepicker.js') }}"></script>
+</head>
+<body>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">
+          Insight
+          <i class="fa fa-calendar-check-o"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+            <a class="nav-link" href="/">
+              <i class="fa fa-search"></i>
+              Event Search
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item {% if request.path == '/analysis' %}active{% endif %}">
+            <a class="nav-link" href="/analysis">
+              <i class="fa fa-bolt"></i>
+              Analysis
+            </a>
+          </li>
+          <li class="nav-item {% if request.path == '/form' %}active{% endif %}">
+            <a class="nav-link" href="/form">
+              <i class="fa fa-comment"></i>
+              Feedback
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+ @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+ .fa.pull-right {
+     margin-left: 0.1em;
+}
+ .date-picker, .date-container {
+     position: relative;
+     display: inline-block;
+     color: rgb(75, 77, 78);
+     -webkit-touch-callout: none;
+     -webkit-user-select: none;
+     -moz-user-select: none;
+     -ms-user-select: none;
+     user-select: none;
+     margin: 20px 0px;
+}
+ .date-container {
+     padding: 0px 40px;
+}
+ .date-picker h2, .date-picker h4 {
+     margin: 0px;
+     padding: 0px;
+     font-family: 'Roboto', sans-serif;
+     font-weight: 200;
+}
+ .date-container .date {
+     text-align: center;
+}
+ .date-picker span.fa {
+     position: absolute;
+     font-size: 4em;
+     font-weight: 100;
+     padding: 8px 0px 7px;
+     cursor: pointer;
+     top: 0px;
+}
+ .date-picker span.fa[data-type="subtract"] {
+     left: 0px;
+}
+ .date-picker span.fa[data-type="add"] {
+     right: 0px;
+}
+ .date-picker span[data-toggle="calendar"] {
+     display: block;
+     position: absolute;
+     top: -7px;
+     right: 45px;
+     font-size: 1em !important;
+     cursor: pointer;
+}
+ .date-picker .input-datepicker {
+     display: none;
+     position: absolute;
+     top: 50%;
+     margin-top: -17px;
+     width:100%;
+}
+ .date-picker .input-datepicker.show-input {
+     display: table;
+}
+ @media (min-width: 768px) and (max-width: 1010px) {
+     .date-picker h2{
+         font-size: 1.5em;
+         font-weight: 400;
+    }
+     .date-picker h4 {
+         font-size: 1.1em;
+    }
+     .date-picker span.fa {
+         font-size: 3em;
+    }
+}
+ #container {
+     padding-top: 50px;
+}
+ .dropdown.dropdown-lg .dropdown-menu {
+     margin-top: -1px;
+     padding: 6px 20px;
+}
+ .btn-group .btn {
+     border-radius: 0;
+     margin-left: -1px;
+     float: right;
+}
+ .btn-group .btn:last-child {
+     border-top-right-radius: 4px;
+     border-bottom-right-radius: 4px;
+}
+ .btn-group .form-horizontal .btn[type="submit"] {
+     border-top-left-radius: 4px;
+     border-bottom-left-radius: 4px;
+}
+ .form-horizontal .form-group {
+     margin-left: 0;
+     margin-right: 0;
+}
+ .form-group .form-control:last-child {
+     border-top-left-radius: 4px;
+     border-bottom-left-radius: 4px;
+}
+ @media screen and (min-width: 768px) {
+     #adv-search {
+         width: 730px;
+         margin: 0 auto;
+    }
+     .dropdown.dropdown-lg {
+         position: static !important;
+    }
+     .dropdown.dropdown-lg .dropdown-menu {
+         min-width: 500px;
+    }
+}
+ .calendar-select {
+     display: inline;
+     position: relative;
+}
+ .row-striped:nth-of-type(odd){
+     background-color: #efefef;
+     border-left: 4px #000000 solid;
+}
+ .row-striped:nth-of-type(even){
+     background-color: #ffffff;
+     border-left: 4px #efefef solid;
+}
+ .row-striped {
+     padding: 15px 0;
+}
+ #search-bar {
+     margin-bottom: 10px;
+     width: auto;
+     border-top-right-radius: 4px;
+     border-bottom-right-radius: 4px;
+}
+ #search-btn {
+     margin: 32px 10px;
+}
+ @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+ .navbar-icon-top .navbar-nav .nav-link > .fa {
+     position: relative;
+     width: 36px;
+     font-size: 24px;
+}
+ .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+     font-size: 0.75rem;
+     position: absolute;
+     right: 0;
+     font-family: sans-serif;
+}
+ .navbar-icon-top .navbar-nav .nav-link > .fa {
+     top: 3px;
+     line-height: 12px;
+}
+ .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
+     top: -10px;
+}
+ @media (min-width: 576px) {
+     .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+         text-align: center;
+         display: table-cell;
+         height: 70px;
+         vertical-align: middle;
+         padding-top: 0;
+         padding-bottom: 0;
+    }
+     .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa {
+         display: block;
+         width: 48px;
+         margin: 2px auto 4px auto;
+         top: 0;
+         line-height: 24px;
+    }
+     .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fa > .badge {
+         top: -7px;
+    }
+}
+ @media (min-width: 768px) {
+     .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+         text-align: center;
+         display: table-cell;
+         height: 70px;
+         vertical-align: middle;
+         padding-top: 0;
+         padding-bottom: 0;
+    }
+     .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa {
+         display: block;
+         width: 48px;
+         margin: 2px auto 4px auto;
+         top: 0;
+         line-height: 24px;
+    }
+     .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fa > .badge {
+         top: -7px;
+    }
+}
+ @media (min-width: 992px) {
+     .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+         text-align: center;
+         display: table-cell;
+         height: 70px;
+         vertical-align: middle;
+         padding-top: 0;
+         padding-bottom: 0;
+         padding-left: 25px;
+    }
+     .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa {
+         display: block;
+         width: 48px;
+         margin: 2px auto 4px auto;
+         top: 0;
+         line-height: 24px;
+    }
+     .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
+         top: -7px;
+    }
+}
+ @media (min-width: 1200px) {
+     .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+         text-align: center;
+         display: table-cell;
+         height: 70px;
+         vertical-align: middle;
+         padding-top: 0;
+         padding-bottom: 0;
+    }
+     .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa {
+         display: block;
+         width: 48px;
+         margin: 2px auto 4px auto;
+         top: 0;
+         line-height: 24px;
+    }
+     .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
+         top: -7px;
+    }
+}
+ .search-results {
+     overflow: hidden;
+}
+ #loader {
+     display: none;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     z-index: 1;
+     width: 150px;
+     height: 150px;
+     margin: -75px 0 0 -75px;
+     border: 16px solid #f3f3f3;
+     border-radius: 50%;
+     border-top: 16px solid #3498db;
+     width: 120px;
+     height: 120px;
+     -webkit-animation: spin 2s linear infinite;
+     animation: spin 2s linear infinite;
+}
+ @-webkit-keyframes spin {
+     0% {
+         -webkit-transform: rotate(0deg);
+    }
+     100% {
+         -webkit-transform: rotate(360deg);
+    }
+}
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+    }
+     100% {
+         transform: rotate(360deg);
+    }
+}
+/* Add animation to "page content" */
+ .animate-bottom {
+     position: relative;
+     -webkit-animation-name: animatechart;
+     -webkit-animation-duration: 1s;
+     animation-name: animatechart;
+     animation-duration: 1s
+}
+ @-webkit-keyframes animatechart {
+     from {
+         bottom:-100px;
+         opacity:0
+    }
+     to {
+         bottom:0px;
+         opacity:1
+    }
+}
+ @keyframes animatechart {
+     from{
+         bottom:-100px;
+         opacity:0
+    }
+     to{
+         bottom:0;
+         opacity:1
+    }
+}

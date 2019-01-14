@@ -1,0 +1,8 @@
+.coverage
+.env
+.idea
+__pycache__
+insight.log
+*.json
+/static/plots/
+/tests/products/

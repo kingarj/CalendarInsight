@@ -1,0 +1,9 @@
+.idea
+.coverage
+.pytest_cache
+.tests
+.dockerignore
+.gitignore
+Dockerfile
+*.log
+README.md

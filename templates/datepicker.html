@@ -1,0 +1,16 @@
+<div id="{{num}}" class="date-picker"  data-date='{{ date[date] }}' data-keyboard="true">
+    <div class="date-container">
+        <h4 class="weekday">{{ date['day'] }}</h4>
+        <h2 class="date">{{ date['month'] }}</h2>
+        <h4 class="year float-right">{{ date['year'] }}</h4>
+    </div>
+    <span id="left{{num}}" data-toggle="datepicker" data-type="subtract" class="fa fa-angle-left"></span>
+    <span id="right{{num}}" data-toggle="datepicker" data-type="add" class="fa fa-angle-right"></span>
+    <div class="input-group input-datepicker">
+        <input type="text" class="form-control" data-format="YYYY/MM/DD" placeholder="YYYY/MM/DD" style="width: 100%; margin-bottom:5px;">
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">Go!</button>
+        </span>
+    </div>
+    <span data-toggle="calendar" class="fa fa-calendar"></span>
+</div>

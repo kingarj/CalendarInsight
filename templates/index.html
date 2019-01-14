@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+    <div id="container" class="container">
+        <form method="POST" class="form-horizontal" role="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="input-group" id="adv-search">
+                          <input name="query" type="text" class="form-control" id="search-bar" placeholder="Search for events" {% if query %}value="{{ query }}"{% endif %}  />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <div class="calendar-select">
+                        <label for="filter">Filter by</label>
+                        <select id="filter" name="calendar" class="form-control">
+                            {% for cal in calendars %}
+                                <option value="{{ cal.id }}" {% if cal.id == current_cal %}selected{%endif%}>
+                                    {{ cal.summary }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="sort">Sort by</label>
+                    <select id="sort" name="sort_by" class="form-control">
+                        <option value="earliest" {% if current_sort == 'earliest' %}selected{%endif%}>Earliest</option>
+                        <option value="latest" {% if current_sort == 'latest' %}selected{%endif%}>Latest</option>
+                    </select>
+                </div>
+                <div class="col-sm-2 text-right">
+                    <button type="submit" id="search-btn" class="btn btn-secondary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    {% if request.method == 'POST' %}
+        <div class="search-results">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <strong>You spend {{ days }} day{% if days != 1 %}s{% endif %}, {{ hours }} hour{% if hours != 1 %}s{% endif %} and {{ minutes }} minute{% if minutes != 1 %}s{% endif %} in events {% if query %}related to: '{{ query }}'{% else %}in this calendar.{% endif %}</strong>
+                </div>
+            </div>
+            <br>
+            {% for item in results %}
+            <div class="row row-striped">
+                <div class="col-sm-1">
+                    <h1 class="display-4"><span class="badge badge-secondary img-responsive">{{ item.start_day_num }}</span></br></span></h1>
+                    {{ item.start_month }}
+                </div>
+                <div class="col-md-11">
+                    <h3 class="text-uppercase"><strong>{{ item.summary }}</strong></h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ item.start_day_text }} {{ ('- ' + item.end_day_text) if item.end_day_text }}</li>
+                        {% if item.start_time and item.end_time %}
+                            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{ item.start_time }} - {{ item.end_time }}</li>
+                        {% endif %}
+                        {% if item.location %}
+                            <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> {{ item.location }}</li>
+                        {% endif %}
+                    </ul>
+                    <p>{{ item.description or '' }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

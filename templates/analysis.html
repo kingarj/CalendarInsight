@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-right:0px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-4 float-sm-left">
+            {% with date=first, num=1 %}
+            {% include 'datepicker.html' %}
+            {% endwith %}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4 float-sm-right">
+            {% with date=second, num=2 %}
+            {% include 'datepicker.html' %}
+            {% endwith %}
+        </div>
+    </div>
+    <div class="row">
+        <div id="loader"></div>
+    </div>
+    <div class="animatechart">
+        <img src="{{ fileName }}" id="pieChart" class="img-fluid">
+        <div id="datewarning" style="display:none" class="date-picker">
+            <center><h4>Please ensure your second date is later than your first date.</h4></center>
+        </div>
+    </div>
+
+{% endblock %}
