@@ -1,0 +1,1 @@
+[{"kind": "calendar#calendarListEntry", "id": "test@cal.com", "summary": "Test", "accessRole": "owner", "defaultReminders": [{"method": "email", "minutes": 15}], "notificationSettings": {"notifications": [{"type": "agenda", "method": "email"}]}, "primary": true, "conferenceProperties": {}}]

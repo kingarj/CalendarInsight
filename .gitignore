@@ -4,5 +4,6 @@
 __pycache__
 insight.log
 *.json
+!/tests/resources/*.json
 /static/plots/
 /tests/products/
