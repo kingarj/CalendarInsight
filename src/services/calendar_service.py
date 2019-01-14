@@ -1,5 +1,6 @@
-from ..insight import cache, application
-
+import sys
+print(sys.path)
+from . import cache, application
 from .authentication_service import get_service
 
 

@@ -1,6 +1,4 @@
-from ..utilities.util import convert_date
-from ..services import authentication_service
-from ..insight import cache, application
+from . import util, authentication_service, cache, application
 
 
 @cache.memoize()
@@ -28,8 +26,8 @@ def get_duration(event):
     :param event
     :return: a timedelta, such that days, hours, minutes or seconds can be derived
     """
-    end = convert_date(event['end'])
-    start = convert_date(event['start'])
+    end = util.convert_date(event['end'])
+    start = util.convert_date(event['start'])
     return end - start
 
 
@@ -91,8 +89,8 @@ def format_event(event):
     :param event
     :return: a dict with the required attributes correctly formatted
     """
-    start = convert_date(event['start'])
-    end = convert_date(event['end'])
+    start = util.convert_date(event['start'])
+    end = util.convert_date(event['end'])
     start_time = start.strftime("%H:%M") if start.hour != 0 else None
     end_time = end.strftime("%H:%M") if end.hour != 0 else None
 

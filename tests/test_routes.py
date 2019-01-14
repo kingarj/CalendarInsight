@@ -52,4 +52,4 @@ class TestRoutes(TestBase):
         resp = client.post('/analysis', json={'el_id': '2', 'date_val': self.first_date.isoformat(),
                                               'other_date': 'Wednesday November 14th 2018'})
         assert resp.status_code == 200
-        assert os.path.isfile(resp.json['fileName'])
+        assert os.path.isfile('src/' + resp.json['fileName'])

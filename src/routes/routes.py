@@ -78,11 +78,14 @@ def analysis():
 
         if not path.isfile(file_name):
             draw_chart(second_date.isoformat(), first_date.isoformat(), file_name)
+        file_name = file_name[4:]
 
         return jsonify({'fileName': file_name})
 
     first_date = format_date(first_date)
     second_date = format_date(second_date)
+
+    file_name = file_name[4:]
 
     return render_template('analysis.html', request=request, fileName=file_name,
                            first=first_date, second=second_date)

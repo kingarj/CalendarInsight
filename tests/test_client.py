@@ -2,7 +2,7 @@ import inspect
 from datetime import datetime, timedelta
 import os, pytest
 
-from ..insight import application
+from src.insight import application
 from googleapiclient.http import HttpMock
 
 
@@ -20,10 +20,11 @@ class TestBase:
 
     @pytest.fixture(autouse=True)
     def client(self, mocker):
-        self.cals_mock = mocker.patch('app.services.calendar_service.get_calendars')
-        self.events_mock = mocker.patch('app.services.events_service.get_events')
-        self.credentials_mock = mocker.patch('app.services.authentication_service.get_credentials')
-        self.authentication_mock = mocker.patch('app.services.authentication_service.create_auth_request')
+        print(__name__)
+        self.cals_mock = mocker.patch('src.services.calendar_service.get_calendars')
+        self.events_mock = mocker.patch('src.services.events_service.get_events')
+        self.credentials_mock = mocker.patch('src.services.authentication_service.get_credentials')
+        self.authentication_mock = mocker.patch('src.services.authentication_service.create_auth_request')
 
         self.cals_mock.return_value = [dict(id='testId', etag='"testEtag"', primary=True, summary='test@test.com',
                                             colorId='1'),
