@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 import pytest
 
-from app.insight import application
+from ..insight import application
 from googleapiclient.http import HttpMock
 
 

@@ -1,5 +1,5 @@
 import os.path
-from app.tests.test_client import TestBase
+from .test_client import TestBase
 
 
 class TestRoutes(TestBase):
