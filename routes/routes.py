@@ -2,12 +2,12 @@ from datetime import datetime, timedelta, timezone
 from flask import render_template, request, jsonify, session, redirect, url_for
 from os import path, environ
 
-from app.insight import application
-from app.services import authentication_service
-from app.services.events_service import search
-from app.services import calendar_service
-from app.services.chart_service import draw_chart, build_file_name
-from app.utilities.util import format_date, convert_date
+from ..insight import application
+from ..services import authentication_service
+from ..services.events_service import search
+from ..services import calendar_service
+from ..services.chart_service import draw_chart, build_file_name
+from ..utilities.util import format_date, convert_date
 
 
 @application.before_request
