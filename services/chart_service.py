@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from app.services import events_service
-from app.services import calendar_service
+from . import events_service
+from . import calendar_service
 from ..insight import application
 import matplotlib
 # specify custom backend for matplotlib
