@@ -6,4 +6,3 @@ insight.log
 *.json
 !/tests/resources/*.json
 /src/static/plots/
-/tests/products/
