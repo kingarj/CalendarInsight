@@ -1,3 +1,4 @@
+import inspect
 import os
 from datetime import datetime
 
@@ -11,7 +12,8 @@ class TestChartService(TestBase):
         """
         Tests that a chart can be generated and saved
         """
-        name = 'tests/products/testName.png'
+        test_services_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+        name = os.path.dirname(test_services_path) + '/products/testName.png'
         draw_chart(self.first_date.isoformat(), self.second_date.isoformat(), name)
         assert os.path.isfile(name)
 
