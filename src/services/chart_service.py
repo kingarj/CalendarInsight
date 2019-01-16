@@ -1,4 +1,6 @@
+import inspect
 from datetime import datetime
+from os import path
 
 from . import events_service
 from . import calendar_service
@@ -61,7 +63,7 @@ def draw_chart(time_max, time_min, plot_name):
                loc="center left",
                bbox_to_anchor=(0.75, 0, 0.5, 1))
     plt.subplots_adjust(left=0.1, bottom=0.1, right=0.75)
-    plt.savefig(plot_name)
+    plt.savefig(add_path_to_file(plot_name))
 
 
 def build_file_name(first_date, second_date):
@@ -78,3 +80,9 @@ def build_file_name(first_date, second_date):
     now = datetime.now().strftime('%Y-%m-%d-%H')
 
     return "src/static/plots/" + primary_etag + first + second + now + ".png"
+
+
+def add_path_to_file(file_name):
+    file_path = path.dirname(path.dirname(path.dirname(path.abspath(
+                inspect.getfile(inspect.currentframe())))))
+    return file_path + "/" + file_name
