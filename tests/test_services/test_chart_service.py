@@ -1,5 +1,5 @@
 import inspect
-import os
+from os import path
 from datetime import datetime
 
 from ..test_client import TestBase
@@ -12,16 +12,16 @@ class TestChartService(TestBase):
         """
         Tests that a chart can be generated and saved
         """
-        test_services_path = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-        name = os.path.dirname(test_services_path) + '/products/testName.png'
+        name = 'tests/products/testName.png'
         draw_chart(self.first_date.isoformat(), self.second_date.isoformat(), name)
-        assert os.path.isfile(name)
+        assert path.isfile(name)
 
     def test_build_file_name(self):
         """
         Tests that a file name can be successfully built
         """
         now = datetime.now().strftime('%Y-%m-%d-%H')
+        # root_path = path.dirname(path.dirname(path.dirname(path.abspath(inspect.getfile(inspect.currentframe())))))
         correct_file_name = "src/static/plots/testEtag2018-11-192018-11-21" + now + ".png"
         test_file_name = build_file_name(self.first_date, self.second_date)
         assert correct_file_name == test_file_name

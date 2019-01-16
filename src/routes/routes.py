@@ -1,13 +1,12 @@
-import inspect
 from datetime import datetime, timedelta, timezone
-from flask import render_template, request, jsonify, session, redirect, url_for
+from flask import render_template, request, jsonify, session, redirect
 from os import path, environ
 
 from ..insight import application
 from ..services import authentication_service
 from ..services.events_service import search
 from ..services import calendar_service
-from ..services.chart_service import draw_chart, build_file_name
+from ..services.chart_service import draw_chart, build_file_name, add_path_to_file
 from ..utilities.util import format_date, convert_date
 
 
@@ -58,8 +57,7 @@ def analysis():
         # the future date must be the first parameter
         file_name = build_file_name(first_date, second_date)
 
-        if not path.isfile(path.dirname(path.dirname(path.dirname(path.abspath(
-                inspect.getfile(inspect.currentframe()))))) + "/" + file_name):
+        if not path.isfile(add_path_to_file(file_name)):
             draw_chart(second_date.astimezone().isoformat(), first_date.astimezone().isoformat(), file_name)
 
     elif request.method == 'POST':
@@ -78,8 +76,7 @@ def analysis():
         # the future date must be the first parameter
         file_name = build_file_name(first_date, second_date)
 
-        if not path.isfile(path.dirname(path.dirname(path.dirname(path.abspath(
-                inspect.getfile(inspect.currentframe()))))) + "/" + file_name):
+        if not path.isfile(add_path_to_file(file_name)):
             draw_chart(second_date.isoformat(), first_date.isoformat(), file_name)
         file_name = file_name[4:]
 

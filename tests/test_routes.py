@@ -1,4 +1,5 @@
-import os.path
+import inspect
+from os import path
 from .test_client import TestBase
 
 
@@ -51,5 +52,7 @@ class TestRoutes(TestBase):
         """
         resp = client.post('/analysis', json={'el_id': '2', 'date_val': self.first_date.isoformat(),
                                               'other_date': 'Wednesday November 14th 2018'})
+        file_path = path.dirname(path.dirname(path.abspath(
+            inspect.getfile(inspect.currentframe())))) + "/src/" + resp.json['fileName']
         assert resp.status_code == 200
-        assert os.path.isfile('src/' + resp.json['fileName'])
+        assert path.isfile(file_path)
