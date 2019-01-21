@@ -1,4 +1,5 @@
 # Insight
+[![Build Status](https://travis-ci.com/kingarj/CalendarInsight.svg?branch=master)](https://travis-ci.com/kingarj/CalendarInsight)
 
 A Flask application using the Google Calendar API to give users an insight as to how they are spending their time.
 Features include event keyword search and graphical representations of time spent in different activities.
